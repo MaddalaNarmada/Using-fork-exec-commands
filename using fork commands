@@ -1,0 +1,23 @@
+SOURCE CODE:
+#include<stdio.h>
+int main()
+{
+int p;
+printf(“ Origin Program, pid = %d\n ” , getpid());
+p=fork();
+if(p==0)
+{
+printf(“ In child process pid = %d , ppid= %d “, getpid(),getppid());
+}
+else
+{
+printf(“ In parent pid = %d, fork returned = %d \n”, getpid(),p);
+}
+}
+
+OUTPUT:
+ cc pro.c
+ ./a.out
+Origin Program, pid = 22386
+In child process pid = 22837 , ppid= 22386
+In parent pid = 22386 , fork returned = 22387
